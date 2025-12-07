@@ -20,7 +20,10 @@
     <biostatMet>4</biostatMet>
     <biostatArc>3</biostatArc>
 
-    <!-- Force Marine trait (degree 1) -->
+    <!-- NEW: class for Marine skill template -->
+    <geneClass>MarineCorpsTraits.Gene_MarineTemplate</geneClass>
+
+    <!-- Forces Marines (degree 1 = Marine) -->
     <forcedTraits>
       <li>
         <def>Marines</def>
@@ -30,9 +33,10 @@
 
     <customEffectDescriptions>
       <li>Forces the Marines trait (degree: Marine).</li>
-      <li>Applies all bonuses of the Marine trait through genetic engineering.</li>
+      <li>Sets core combat and work skills to elite Marine levels.</li>
     </customEffectDescriptions>
   </GeneDef>
+
 
 
   <!-- GENE: Corpsman - matches Corpsman trait -->
@@ -54,7 +58,10 @@
     <biostatMet>4</biostatMet>
     <biostatArc>3</biostatArc>
 
-    <!-- Force Marines trait (degree 2 = Corpsman) -->
+    <!-- NEW: class for Corpsman skill template -->
+    <geneClass>MarineCorpsTraits.Gene_CorpsmanTemplate</geneClass>
+
+    <!-- Forces Marines trait (degree 2 = Corpsman) -->
     <forcedTraits>
       <li>
         <def>Marines</def>
@@ -64,9 +71,10 @@
 
     <customEffectDescriptions>
       <li>Forces the Marines trait (degree: Corpsman).</li>
-      <li>Applies all bonuses of the Corpsman trait through genetic engineering.</li>
+      <li>Sets medical and support skills to elite Corpsman levels.</li>
     </customEffectDescriptions>
   </GeneDef>
+
 
 
   <!-- GENE: War Hero - matches War Hero trait -->
@@ -88,9 +96,10 @@
     <biostatMet>5</biostatMet>
     <biostatArc>4</biostatArc>
 
-    <!-- Hook to the C# gene -->
-    <geneClass>MarineCorpsTraits.Gene_AllSkills20_RemoveMarines</geneClass>
+    <!-- NEW: class for War Hero skill template -->
+    <geneClass>MarineCorpsTraits.Gene_WarHeroTemplate</geneClass>
 
+    <!-- Force War Hero trait -->
     <forcedTraits>
       <li>
         <def>WarHero</def>
@@ -99,10 +108,11 @@
 
     <customEffectDescriptions>
       <li>Forces the War Hero trait.</li>
-      <li>Applies all bonuses of the War Hero trait through genetic engineering.</li>
-      <li>Overwrites prior Marine/Corpsman conditioning and perfects all skills.</li>
+      <li>Sets all skills to superhuman War Hero levels.</li>
+      <li>Overwrites prior Marine/Corpsman/War Hero traits.</li>
     </customEffectDescriptions>
   </GeneDef>
+
 
 
 </Defs>
