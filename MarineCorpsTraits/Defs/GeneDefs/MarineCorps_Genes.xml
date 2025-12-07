@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- GENE: Marine - frontline super soldier -->
+  <GeneDef>
+    <defName>MarineCorps_MarineGene</defName>
+    <label>marine corps genome (marine)</label>
+    <labelShortAdj>marine</labelShortAdj>
+    <description>
+      This archite gene rewrites the subject's physiology and psychology to match the Marine Corps "Marine" profile.
+      Carriers gain the Marine trait and enhanced combat biology, becoming terrifyingly efficient frontline badasses.
+    </description>
+
+    <iconPath>UI/Icons/Genes/MarineGene</iconPath>
+
+    <displayCategory>Archite</displayCategory>
+    <displayOrderInCategory>500</displayOrderInCategory>
+
+    <biostatCpx>6</biostatCpx>
+    <biostatMet>4</biostatMet>
+    <biostatArc>3</biostatArc>
+
+    <!-- Extra physical bonuses beyond the trait (all valid stats) -->
+    <statOffsets>
+      <!-- Faster healing -->
+      <InjuryHealingFactor>1.25</InjuryHealingFactor>
+
+      <!-- Less stagger, less rest drain -->
+      <StaggerDurationFactor>0.5</StaggerDurationFactor>
+      <RestFallRateFactor>0.5</RestFallRateFactor>
+    </statOffsets>
+
+    <!-- Force Marine trait (degree 1) -->
+    <forcedTraits>
+      <li>
+        <def>Marines</def>
+        <degree>1</degree>
+      </li>
+    </forcedTraits>
+
+    <customEffectDescriptions>
+      <li>Forces the Marines trait (degree: Marine).</li>
+      <li>Improves wound healing.</li>
+      <li>Reduces stagger duration and slows sleep need fall rate.</li>
+    </customEffectDescriptions>
+  </GeneDef>
+
+
+  <!-- GENE: Corpsman - combat bioregeneration & medic -->
+  <GeneDef>
+    <defName>MarineCorps_CorpsmanGene</defName>
+    <label>marine corps genome (corpsman)</label>
+    <labelShortAdj>corpsman</labelShortAdj>
+    <description>
+      This archite gene rewires the subject to match the Marine Corps "Corpsman" profile.
+      Carriers gain the Corpsman variant of the Marines trait along with enhanced regeneration and medical prowess.
+    </description>
+
+    <iconPath>UI/Icons/Genes/CorpsmanGene</iconPath>
+
+    <displayCategory>Archite</displayCategory>
+    <displayOrderInCategory>501</displayOrderInCategory>
+
+    <biostatCpx>6</biostatCpx>
+    <biostatMet>4</biostatMet>
+    <biostatArc>3</biostatArc>
+
+    <statOffsets>
+      <!-- Strong regeneration and disease resistance -->
+      <InjuryHealingFactor>2.0</InjuryHealingFactor>
+      <ImmunityGainSpeed>1.0</ImmunityGainSpeed>
+
+      <!-- Medical super-boosts -->
+      <MedicalTendQuality>0.25</MedicalTendQuality>
+      <MedicalTendSpeed>0.5</MedicalTendSpeed>
+    </statOffsets>
+
+    <!-- Capacity buffs for filtration (helps with toxins / disease) -->
+    <capMods>
+      <li>
+        <capacity>BloodFiltration</capacity>
+        <offset>0.2</offset>
+      </li>
+    </capMods>
+
+    <!-- Corpsman cannot suffer blood loss from hediff givers -->
+    <hediffGiversCannotGive>
+      <li>BloodLoss</li>
+    </hediffGiversCannotGive>
+
+    <!-- Force Marines trait (degree 2 = Corpsman) -->
+    <forcedTraits>
+      <li>
+        <def>Marines</def>
+        <degree>2</degree>
+      </li>
+    </forcedTraits>
+
+    <customEffectDescriptions>
+      <li>Forces the Marines trait (degree: Corpsman).</li>
+      <li>Grants rapid wound healing and greatly improved immunity gain.</li>
+      <li>Greatly improves tending quality and speed.</li>
+      <li>Prevents blood loss from standard injury hediff givers.</li>
+    </customEffectDescriptions>
+  </GeneDef>
+
+
+  <!-- GENE: War Hero - mini-apotheosis juggernaut -->
+  <GeneDef>
+    <defName>MarineCorps_WarHeroGene</defName>
+    <label>war hero genome</label>
+    <labelShortAdj>war hero</labelShortAdj>
+    <description>
+      An archite super-soldier genome. Carriers gain the War Hero trait and further enhancements, becoming nearly
+      unstoppable juggernauts capable of reshaping the battlefield single-handedly.
+    </description>
+
+    <iconPath>UI/Icons/Genes/WarHeroGene</iconPath>
+
+    <displayCategory>Archite</displayCategory>
+    <displayOrderInCategory>502</displayOrderInCategory>
+
+    <biostatCpx>8</biostatCpx>
+    <biostatMet>5</biostatMet>
+    <biostatArc>4</biostatArc>
+
+    <statOffsets>
+      <!-- Essentially immune to downing from pain -->
+      <PainShockThreshold>9999</PainShockThreshold>
+
+      <!-- Extreme fast healing -->
+      <InjuryHealingFactor>10.0</InjuryHealingFactor>
+
+      <!-- Extra armor on top of the trait -->
+      <ArmorRating_Sharp>1.5</ArmorRating_Sharp>
+      <ArmorRating_Blunt>1.5</ArmorRating_Blunt>
+      <ArmorRating_Heat>1.5</ArmorRating_Heat>
+
+      <!-- Cannot really be staggered -->
+      <StaggerDurationFactor>0.0</StaggerDurationFactor>
+
+      <!-- Mentally unbreakable -->
+      <MentalBreakThreshold>-9999</MentalBreakThreshold>
+    </statOffsets>
+
+    <!-- Force War Hero trait -->
+    <forcedTraits>
+      <li>
+        <def>WarHero</def>
+      </li>
+    </forcedTraits>
+
+    <hediffGiversCannotGive>
+      <li>BloodLoss</li>
+    </hediffGiversCannotGive>
+
+    <customEffectDescriptions>
+      <li>Forces the War Hero trait.</li>
+      <li>Heals injuries extremely quickly.</li>
+      <li>Further increases armor beyond the War Hero trait.</li>
+      <li>Prevents staggering and effectively removes the chance of mental breaks.</li>
+    </customEffectDescriptions>
+  </GeneDef>
+
+</Defs>

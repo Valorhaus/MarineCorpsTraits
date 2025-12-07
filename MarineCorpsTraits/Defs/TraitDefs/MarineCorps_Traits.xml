@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- MARINES TRAIT (Marine + Corpsman degrees) -->
+  <TraitDef>
+    <defName>Marines</defName>
+    <!-- Approx 3% overall chance, split 1% Marine / 2% Corpsman by degree commonality -->
+    <commonality>0.03</commonality>
+    <degreeDatas>
+
+      <!-- Degree 1: Marine (about 125% better than baseline pawn) -->
+      <li>
+        <degree>1</degree>
+        <label>Marine</label>
+        <description>{PAWN_nameDef} is a Marine. They are badasses.</description>
+
+        <!-- Relative chance within this trait (1 part Marine) -->
+        <commonality>1</commonality>
+
+        <statOffsets>
+          <!-- Slightly better rest & much better overall performance -->
+          <RestRateMultiplier>0.3</RestRateMultiplier>
+
+          <!-- Combat: very good but not insane -->
+          <AimingDelayFactor>-0.3</AimingDelayFactor>
+          <ShootingAccuracyPawn>0.25</ShootingAccuracyPawn>
+          <MeleeHitChance>0.25</MeleeHitChance>
+
+          <!-- Tougher than normal -->
+          <ArmorRating_Sharp>0.3</ArmorRating_Sharp>
+          <ArmorRating_Blunt>0.3</ArmorRating_Blunt>
+          <ArmorRating_Heat>0.3</ArmorRating_Heat>
+
+          <!-- Better immunity, more pain tolerance -->
+          <ImmunityGainSpeed>0.5</ImmunityGainSpeed>
+          <PainShockThreshold>0.2</PainShockThreshold>
+
+          <!-- Carry more (roughly ~2x normal human) -->
+          <CarryingCapacity>45</CarryingCapacity>
+
+          <!-- Global improvements (around 2.25x overall performance) -->
+          <WorkSpeedGlobal>1.25</WorkSpeedGlobal>
+          <GlobalLearningFactor>1.25</GlobalLearningFactor>
+          <MoveSpeed>1.0</MoveSpeed>
+
+          <!-- Harder to break mentally, but not unbreakable -->
+          <MentalBreakThreshold>-0.1</MentalBreakThreshold>
+        </statOffsets>
+
+        <skillGains>
+          <Melee>6</Melee>
+          <Shooting>6</Shooting>
+        </skillGains>
+      </li>
+
+      <!-- Degree 2: Corpsman (about 25% better than baseline pawn, medic-focused) -->
+      <li>
+        <degree>2</degree>
+        <label>Corpsman</label>
+        <description>{PAWN_nameDef} is a Corpsman. They patch up the badasses.</description>
+
+        <!-- Relative chance within this trait (2 parts Corpsman) -->
+        <commonality>2</commonality>
+
+        <statOffsets>
+          <!-- Slightly better rest & overall performance -->
+          <RestRateMultiplier>0.15</RestRateMultiplier>
+
+          <!-- Combat: modest boost, still competent -->
+          <AimingDelayFactor>-0.1</AimingDelayFactor>
+          <ShootingAccuracyPawn>0.1</ShootingAccuracyPawn>
+          <MeleeHitChance>0.1</MeleeHitChance>
+
+          <!-- Small durability bump -->
+          <ArmorRating_Sharp>0.1</ArmorRating_Sharp>
+          <ArmorRating_Blunt>0.1</ArmorRating_Blunt>
+          <ArmorRating_Heat>0.1</ArmorRating_Heat>
+
+          <!-- Better disease handling -->
+          <ImmunityGainSpeed>0.25</ImmunityGainSpeed>
+
+          <!-- Carry a bit more than normal -->
+          <CarryingCapacity>10</CarryingCapacity>
+
+          <!-- About 25% better general work / learning / move -->
+          <WorkSpeedGlobal>0.25</WorkSpeedGlobal>
+          <GlobalLearningFactor>0.25</GlobalLearningFactor>
+          <MoveSpeed>0.5</MoveSpeed>
+
+          <!-- Small mental resilience bump -->
+          <MentalBreakThreshold>-0.05</MentalBreakThreshold>
+
+          <!-- Medical-focused bonuses -->
+          <MedicalTendSpeed>0.25</MedicalTendSpeed>
+          <MedicalTendQuality>0.1</MedicalTendQuality>
+          <MedicalOperationSpeed>0.25</MedicalOperationSpeed>
+        </statOffsets>
+
+        <skillGains>
+          <Melee>6</Melee>
+          <Shooting>6</Shooting>
+          <Medicine>8</Medicine>
+        </skillGains>
+      </li>
+
+    </degreeDatas>
+  </TraitDef>
+
+
+  <!-- WAR HERO TRAIT (unchanged: still insane endgame monster) -->
+  <TraitDef>
+    <defName>WarHero</defName>
+    <!-- 0% random spawn chance: must be added manually or via genes -->
+    <commonality>0</commonality>
+    <degreeDatas>
+      <li>
+        <label>War Hero</label>
+        <description>Damn near unkillable, and they will probably kill off half your colony, good luck.</description>
+        <statOffsets>
+          <RestRateMultiplier>12</RestRateMultiplier>
+
+          <!-- COMBAT: better than Marines, still not literal instant-kill -->
+          <AimingDelayFactor>-0.75</AimingDelayFactor>
+          <ShootingAccuracyPawn>1.0</ShootingAccuracyPawn>
+          <MeleeHitChance>0.5</MeleeHitChance>
+
+          <!-- DEFENSE: ultra tank -->
+          <ArmorRating_Sharp>2.5</ArmorRating_Sharp>
+          <ArmorRating_Blunt>2.5</ArmorRating_Blunt>
+          <ArmorRating_Heat>2.5</ArmorRating_Heat>
+          <IncomingDamageFactor>-0.9</IncomingDamageFactor>
+
+          <!-- TOXIC IMMUNITY & RESISTANCE (Biotech) -->
+          <ToxicSensitivity>-1</ToxicSensitivity>
+          <ToxicResistance MayRequire="Ludeon.RimWorld.Biotech">9999</ToxicResistance>
+          <ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">9999</ToxicEnvironmentResistance>
+
+          <!-- CARRY CAPACITY (absurdly high) -->
+          <CarryingCapacity>5000</CarryingCapacity>
+
+          <PsychicSensitivity>-1</PsychicSensitivity>
+          <ComfyTemperatureMax>40</ComfyTemperatureMax>
+          <ComfyTemperatureMin>-20</ComfyTemperatureMin>
+
+          <!-- APOTHEOSIS-LEVEL WORK / SPEED / LEARNING -->
+          <WorkSpeedGlobal>9999</WorkSpeedGlobal>
+          <GlobalLearningFactor>999999</GlobalLearningFactor>
+          <MoveSpeed>500</MoveSpeed>
+
+          <MentalBreakThreshold>-213</MentalBreakThreshold>
+          <ImmunityGainSpeed>8</ImmunityGainSpeed>
+          <MedicalOperationSpeed>20</MedicalOperationSpeed>
+          <PainShockThreshold>10</PainShockThreshold>
+        </statOffsets>
+
+        <skillGains>
+          <Melee>30</Melee>
+          <Shooting>30</Shooting>
+        </skillGains>
+      </li>
+    </degreeDatas>
+  </TraitDef>
+
+</Defs>
