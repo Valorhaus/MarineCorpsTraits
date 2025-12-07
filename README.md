@@ -197,5 +197,4 @@ Testing: Your colony :)
 
 📜 License
 
-MIT License
-You may modify, repack, fork, or integrate this mod freely.
+GNU GENERAL PUBLIC LICENSE
