@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-
+mono
   <!-- MARINES TRAIT (Marine + Corpsman degrees) -->
   <TraitDef>
     <defName>Marines</defName>
@@ -128,18 +128,13 @@
         </skillGains>
       </li>
 
-    </degreeDatas>
-  </TraitDef>
-
-
-  <!-- WAR HERO TRAIT -->
-  <TraitDef>
-    <defName>WarHero</defName>
-    <!-- 0% random spawn chance: must be added manually or via genes -->
-    <commonality>0</commonality>
-    <degreeDatas>
       <li>
+        <degree>3</degree>
         <label>War Hero</label>
+        
+        <!-- Relative chance within this trait (0 parts War Hero) -->
+        <commonality>0</commonality>
+
         <description>
           An apex engine of war. Nearly unkillable, impossibly fast, and terrifyingly precise.
         </description>
@@ -181,7 +176,7 @@
           <WorkSpeedGlobal>9999</WorkSpeedGlobal>
           <GlobalLearningFactor>999999</GlobalLearningFactor>
           <MoveSpeed>500</MoveSpeed>
-		  <ResearchSpeed>9999</ResearchSpeed>
+          <ResearchSpeed>9999</ResearchSpeed>
 
           <!-- Healing & survivability, scaled above Marine -->
           <ImmunityGainSpeed>8</ImmunityGainSpeed>
@@ -195,7 +190,7 @@
           <Shooting>30</Shooting>
         </skillGains>
       </li>
+
     </degreeDatas>
   </TraitDef>
-
 </Defs>

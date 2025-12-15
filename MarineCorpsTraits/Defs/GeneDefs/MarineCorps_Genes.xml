@@ -3,7 +3,7 @@
 
   <!-- GENE: Marine - matches Marine trait -->
   <GeneDef>
-    <defName>MarineCorps_MarineGene</defName>
+    <defName>MarineCorps_Marine</defName>
     <label>marine corps genome (marine)</label>
     <labelShortAdj>marine</labelShortAdj>
     <description>
@@ -21,7 +21,7 @@
     <biostatArc>3</biostatArc>
 
     <!-- NEW: class for Marine skill template -->
-    <geneClass>MarineCorpsTraits.Gene_MarineTemplate</geneClass>
+    <geneClass>MarineCorpsTraits.Gene_Marine</geneClass>
 
     <!-- Forces Marines (degree 1 = Marine) -->
     <forcedTraits>
@@ -41,7 +41,7 @@
 
   <!-- GENE: Corpsman - matches Corpsman trait -->
   <GeneDef>
-    <defName>MarineCorps_CorpsmanGene</defName>
+    <defName>MarineCorps_Corpsman</defName>
     <label>marine corps genome (corpsman)</label>
     <labelShortAdj>corpsman</labelShortAdj>
     <description>
@@ -59,7 +59,7 @@
     <biostatArc>3</biostatArc>
 
     <!-- NEW: class for Corpsman skill template -->
-    <geneClass>MarineCorpsTraits.Gene_CorpsmanTemplate</geneClass>
+    <geneClass>MarineCorpsTraits.Gene_Corpsman</geneClass>
 
     <!-- Forces Marines trait (degree 2 = Corpsman) -->
     <forcedTraits>
@@ -79,7 +79,7 @@
 
   <!-- GENE: War Hero - matches War Hero trait -->
   <GeneDef>
-    <defName>MarineCorps_WarHeroGene</defName>
+    <defName>MarineCorps_WarHero</defName>
     <label>war hero genome</label>
     <labelShortAdj>war hero</labelShortAdj>
     <description>
@@ -97,12 +97,13 @@
     <biostatArc>4</biostatArc>
 
     <!-- NEW: class for War Hero skill template -->
-    <geneClass>MarineCorpsTraits.Gene_WarHeroTemplate</geneClass>
+    <geneClass>MarineCorpsTraits.Gene_WarHero</geneClass>
 
     <!-- Force War Hero trait -->
     <forcedTraits>
       <li>
-        <def>WarHero</def>
+        <def>Marines</def>
+        <degree>3</degree>
       </li>
     </forcedTraits>
 
